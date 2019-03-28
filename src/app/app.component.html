@@ -1,0 +1,20 @@
+
+<wj-flex-grid #flex  [style.max-height]="'300px'"
+[itemsSource]="treeData" [childItemsPath]="'items'" [allowResizing]="'None'"  >
+  <wj-flex-grid-column [binding]="'name'" [width]="'*'">
+      <ng-template wjFlexGridCellTemplate [cellType]="'Cell'" let-cell="cell">
+          <span (click)="expandCollapseNode(cell.row)"> 
+              <fa-icon icon="coffee"></fa-icon>{{cell.item.name}}
+            </span>
+        </ng-template>
+  </wj-flex-grid-column>
+  <wj-flex-grid-column [binding]="'length'" [width]="80" [align]="'center'"></wj-flex-grid-column>
+</wj-flex-grid>
+<li>Steps to follow to replicate the issue </li>
+<li> As you see all the hierarchy is expanded</li>
+<li>Now click on the coffee cup of <b>collapse me and scroll down</b></li>
+<li> Now Scroll down to bottom using scroll bar</li>
+<li> Now click on Three hirarchy coffee cup Nothing happens</li>
+
+
+
